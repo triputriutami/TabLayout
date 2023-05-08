@@ -14,10 +14,10 @@ import android.webkit.WebViewClient;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ECommerceFragment#newInstance} factory method to
+ * Use the {@link KampusFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ECommerceFragment extends Fragment {
+public class KampusFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,8 +30,7 @@ public class ECommerceFragment extends Fragment {
 
     private WebView _webView;
 
-    public ECommerceFragment()
-    {
+    public KampusFragment() {
         // Required empty public constructor
     }
 
@@ -41,12 +40,11 @@ public class ECommerceFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ECommerceFragment.
+     * @return A new instance of fragment KampusFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ECommerceFragment newInstance(String param1, String param2)
-    {
-        ECommerceFragment fragment = new ECommerceFragment();
+    public static KampusFragment newInstance(String param1, String param2) {
+        KampusFragment fragment = new KampusFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -55,8 +53,7 @@ public class ECommerceFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -66,11 +63,11 @@ public class ECommerceFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
-    {
-        View view = inflater . inflate(R .layout.fragment_e_commerce, container, false);
-        _webView =(WebView)  view.findViewById(R.id. eCommerceWebView);
-        _webView.loadUrl("https://www.jd.id");
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_kampus, container, false);
+
+        _webView = (WebView) view.findViewById(R.id.kampusWebView);
+        _webView.loadUrl("https://www.stmikpontianak.ac.id");
 
         WebSettings settings = _webView.getSettings();
         settings.setJavaScriptEnabled(true);
@@ -79,9 +76,10 @@ public class ECommerceFragment extends Fragment {
         WebViewClient webViewClient = new WebViewClient();
         _webView.setWebViewClient(webViewClient);
 
-        WebChromeClient webChromeClient= new WebChromeClient();
+        WebChromeClient webChromeClient = new WebChromeClient();
         _webView.setWebChromeClient(webChromeClient);
+        // Inflate the layout for this fragment
+        return view;
 
-       return view;
     }
 }
